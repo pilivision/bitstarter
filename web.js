@@ -3,6 +3,8 @@ var app = express.createServer(express.logger());
 var fs = require('fs');
 var myStr;
 
+app.use(express.static(__dirname + '/images'));
+
 app.get('/', function(request, response) {
   myStr = fs.readFileSync('index.html', 'utf-8');	
   response.send(myStr);
